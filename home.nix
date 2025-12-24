@@ -28,7 +28,6 @@
    putty
    joplin
    vlc
-   zsh
 
 
     # add more packages here
