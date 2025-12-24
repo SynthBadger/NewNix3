@@ -75,6 +75,13 @@
     #media-session.enable = true;
   };
 
+   services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+
 
   # Nvidia and Keybord settings
   hardware.keyboard.qmk.enable = true;
