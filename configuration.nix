@@ -75,6 +75,20 @@
     #media-session.enable = true;
   };
 
+
+  # Nvidia and Keybord settings
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = with pkgs; [via];
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -105,6 +119,7 @@
       goverlay
       via
       qmk
+      #XivLauncher Setup
       (xivlauncher-rb.override {
         useGameMode = true;
         nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
