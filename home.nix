@@ -20,6 +20,14 @@
    novelwriter
    hunspell
    hunspellDicts.en_US
+   telegram-desktop
+   fastfetch
+   goverlay
+   via
+   qmk
+   putty
+   joplin
+   vlc
 
 
     # add more packages here
