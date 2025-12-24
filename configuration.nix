@@ -142,6 +142,7 @@
       #XivLauncher Setup
       (xivlauncher-rb.override {
         useGameMode = true;
+        useSteamRun = true;
         nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
       })
 
