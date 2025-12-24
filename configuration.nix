@@ -131,6 +131,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
       git
+      protonplus
       dxvk
       wine
       winetricks
