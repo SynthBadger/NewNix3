@@ -140,6 +140,7 @@
       via
       qmk
       zsh
+      umu-launcher
       #XivLauncher Setup
       (xivlauncher-rb.override {
         useGameMode = true;
