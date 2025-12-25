@@ -114,6 +114,7 @@
   };
 
   # Install firefox.
+
   programs.firefox.enable = true;
   programs.niri.enable = true;
   #Steam Setup
@@ -143,6 +144,7 @@
       via
       qmk
       zsh
+
 
       #XivLauncher Setup
       (xivlauncher-rb.override {
