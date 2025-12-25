@@ -22,11 +22,11 @@
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.imogen = import ./home.nix;
-        }
+        #{
+        #  home-manager.useGlobalPkgs = true;
+        #  home-manager.useUserPackages = true;
+        #  home-manager.users.imogen = import ./home.nix;
+        #}
         nixos-xivlauncher-rb.nixosModules.default
       ];
     };
