@@ -1,24 +1,7 @@
 { config, pkgs, lib, ... }:
 
-  let
-    niri = import (fetchFromGitHub {
-      owner = "sodiboo";
-      repo = "system";
-      rev = "main"; # or specify another revision if needed
-      src = ./.;
-    }) {};
-  in {
-    # Here you add your Home Manager configuration
-    home.packages = [
-      # Add any packages you want
-    ];
-
-    # Integrate the Niri module
-    imports = [
-      niri.personal.niri.mod.nix
-    ];
-
-
+{
+  # programs.home-manager.enable = true;
   # -------------------------------
   # User info
   # -------------------------------
