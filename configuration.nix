@@ -115,7 +115,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
+  programs.niri.enable = true;
   #Steam Setup
   programs.steam = {
   enable = true;
