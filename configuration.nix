@@ -85,11 +85,17 @@
     openFirewall = true;
   };
 
+  #Stadia Controller Stuff
+
+  hardware.uinput.enable = true;
 
 
   # Nvidia and Keybord settings
   hardware.keyboard.qmk.enable = true;
-  services.udev.packages = with pkgs; [via];
+  services.udev.packages = with pkgs; [
+    game-devices-udev-rules
+    via
+    ];
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
