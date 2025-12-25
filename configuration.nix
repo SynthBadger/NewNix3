@@ -137,9 +137,13 @@
       winetricks
       vulkan-tools
       goverlay
+      mangohud
+      via
+      qmk
       via
       qmk
       zsh
+
       #XivLauncher Setup
       (xivlauncher-rb.override {
         useGameMode = true;
