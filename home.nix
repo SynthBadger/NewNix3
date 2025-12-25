@@ -2,12 +2,11 @@
 
 {
 
-  homemanager.useFlakes = true;  # Ensure flakes are enabled
 
-  imports =
-    [
-      ./etc/nixos/niri.mod.nix  # Adjust the path based on where niri.mod.nix is located
-    ];# -------------------------------
+
+
+
+  # -------------------------------
   # User info
   # -------------------------------
   home.username = "imogen";
