@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
+
     ];
 
   # Bootloader.
@@ -159,7 +159,7 @@
        zsh
 
       ];
- # home-manager.backupFileExtension = "bak"; =
+   #home-manager.backupFileExtension = "bak"; =
    #programs.home-manager.enable = true;
    #home-manager.useUserPackages = true;
    #home-manager.configuration = ./home.nix;
