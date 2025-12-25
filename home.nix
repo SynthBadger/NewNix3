@@ -7,7 +7,7 @@
   # -------------------------------
   home.username = "imogen";
   home.homeDirectory = "/home/imogen";
-  home.stateVersion = "25.11";
+  home.stateVersion = "25.05";
 
   # -------------------------------
   # Packages
