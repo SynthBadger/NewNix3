@@ -157,7 +157,7 @@
       environment.shells = with pkgs; [
        zsh
       ];
-  home-manager.backupFileExtension = "bak";
+ # home-manager.backupFileExtension = "bak";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
