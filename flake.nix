@@ -34,6 +34,7 @@
     };
 
     # Package definitions
-    packages.x86_64-linux.niri = nixpkgs.callPackage ./niri/default.nix {};
+    packages.x86_64-linux.niri = nixpkgs.lib.callPackage ./niri/default.nix { };
+
   };
 }
