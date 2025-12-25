@@ -157,10 +157,11 @@
   ];
       environment.shells = with pkgs; [
        zsh
+
       ];
  # home-manager.backupFileExtension = "bak"; =
-   programs.home-manager.enable = true;
-   home-manager.useUserPackages = true;
+   #programs.home-manager.enable = true;
+   #home-manager.useUserPackages = true;
    #home-manager.configuration = ./home.nix;
 
   # Some programs need SUID wrappers, can be configured further or are
