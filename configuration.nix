@@ -119,6 +119,14 @@
     users.extraUsers.imogen = {
     shell = pkgs.zsh;
     };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/nic/Projects/nixos-config";
+  };
+
   programs.firefox.enable = true;
   programs.niri.enable = true;
   #Steam Setup
