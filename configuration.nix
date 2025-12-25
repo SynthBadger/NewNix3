@@ -115,7 +115,7 @@
   };
 
   # Install firefox.
-  programs.home-manager.enable = true;
+
   programs.firefox.enable = true;
   programs.niri.enable = true;
   #Steam Setup
@@ -161,6 +161,7 @@
  # home-manager.backupFileExtension = "bak"; =
    programs.home-manager.enable = true;
    home-manager.useUserPackages = true;
+   #home-manager.configuration = ./home.nix;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
