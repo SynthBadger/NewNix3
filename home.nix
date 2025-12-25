@@ -28,6 +28,8 @@
    putty
    joplin
    vlc
+   vesktop
+
 
 
     # add more packages here
