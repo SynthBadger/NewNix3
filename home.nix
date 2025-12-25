@@ -22,9 +22,6 @@
    hunspellDicts.en_US
    telegram-desktop
    fastfetch
-   goverlay
-   via
-   qmk
    putty
    joplin
    vlc
