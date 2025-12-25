@@ -148,6 +148,7 @@
       zsh
       home-manager
       wayland-utils
+      alacritty
       #xwayland-satellite-unstable
 
 
