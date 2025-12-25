@@ -115,7 +115,10 @@
   };
 
   # Install firefox.
-
+  programs.zsh.enable = true;
+    users.extraUsers.imogen = {
+    shell = pkgs.zsh;
+    };
   programs.firefox.enable = true;
   programs.niri.enable = true;
   #Steam Setup
