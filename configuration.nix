@@ -138,6 +138,7 @@
       wine
       winetricks
       vulkan-tools
+      gamescope
       goverlay
       mangohud
       via
@@ -146,6 +147,8 @@
       qmk
       zsh
       home-manager
+      wayland-utils
+      #xwayland-satellite-unstable
 
 
       #XivLauncher Setup
