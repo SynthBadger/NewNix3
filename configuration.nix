@@ -115,9 +115,9 @@
   };
 
   # Install firefox.
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
     users.extraUsers.imogen = {
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     };
   programs.firefox.enable = true;
   programs.niri.enable = true;
@@ -167,7 +167,7 @@
   ];
       environment.shells = with pkgs; [
        zsh
-       fish
+      # fish
 
       ];
    #home-manager.backupFileExtension = "bak"; =
