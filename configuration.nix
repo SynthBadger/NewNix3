@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -114,7 +115,7 @@
   };
 
   # Install firefox.
-
+  programs.home-manager.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = true;
   #Steam Setup
