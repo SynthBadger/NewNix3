@@ -115,9 +115,9 @@
   };
 
   # Install firefox.
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
     users.extraUsers.imogen = {
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     };
   programs.firefox.enable = true;
   programs.niri.enable = true;
@@ -149,9 +149,11 @@
       via
       qmk
       zsh
+      fish
       home-manager
       wayland-utils
       alacritty
+      nh
       #xwayland-satellite-unstable
 
 
@@ -165,6 +167,7 @@
   ];
       environment.shells = with pkgs; [
        zsh
+       fish
 
       ];
    #home-manager.backupFileExtension = "bak"; =
