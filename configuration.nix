@@ -145,6 +145,7 @@
       via
       qmk
       zsh
+      home-manager
 
 
       #XivLauncher Setup

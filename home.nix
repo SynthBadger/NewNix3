@@ -2,12 +2,17 @@
 
 {
 
-  # -------------------------------
+  homemanager.useFlakes = true;  # Ensure flakes are enabled
+
+  imports =
+    [
+      ./etc/nixos/niri.mod.nix  # Adjust the path based on where niri.mod.nix is located
+    ];# -------------------------------
   # User info
   # -------------------------------
   home.username = "imogen";
   home.homeDirectory = "/home/imogen";
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   # -------------------------------
   # Packages
@@ -60,7 +65,7 @@
   # -------------------------------
   # Home Manager itself
   # -------------------------------
-  programs.home-manager.enable = true;
+  #programs.home-manager.enable = true;
 
 
 
