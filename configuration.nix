@@ -10,6 +10,8 @@
       ./modules/audio.nix
       ./modules/gaming.nix
       ./modules/printing.nix
+      ./modules/desktop.nix
+      ./modules/peripherals.nix
 
     ];
 
@@ -48,33 +50,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
-
-  #Stadia Controller Stuff
-
-  hardware.uinput.enable = true;
-
-
-  # Nvidia and Keybord settings
-  hardware.keyboard.qmk.enable = true;
-  services.udev.packages = with pkgs; [
-    game-devices-udev-rules
-    via
-    ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
