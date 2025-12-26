@@ -74,9 +74,6 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
    services.avahi = {
@@ -120,7 +117,7 @@
     ];
   };
 
-  # Install firefox.
+
   programs.zsh.enable = true;
     users.extraUsers.imogen = {
     shell = pkgs.zsh;
@@ -133,14 +130,15 @@
     flake = "/home/nic/Projects/nixos-config";
   };
 
+  programs.gamemode.enable = true;
   programs.firefox.enable = true;
-  programs.niri.enable = true;
+  programs.niri.enable = false;
   #Steam Setup
   programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   # Allow unfree packages
@@ -179,15 +177,17 @@
       })
 
   ];
+
+      environment.sessionVariables = {
+        FLAKE = "/home/imogen/etc/nixos";
+      };
+
       environment.shells = with pkgs; [
        zsh
       # fish
 
       ];
-   #home-manager.backupFileExtension = "bak"; =
-   #programs.home-manager.enable = true;
-   #home-manager.useUserPackages = true;
-   #home-manager.configuration = ./home.nix;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
