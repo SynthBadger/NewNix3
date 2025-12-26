@@ -80,6 +80,7 @@
     '';
     shellAliases = {
       ll = "ls -l";
+      bigp = "git pull origin master --force";
       lapup = "sudo nixos-rebuild switch --flake .#laptop";
       dskup = "sudo nixos-rebuild switch --flake .#desktop";
       update = "nh os switch .";
