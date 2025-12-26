@@ -1,6 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+
 
 { config, pkgs, ... }:
 
@@ -8,7 +6,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./programs.nix
+      ./modules/programs.nix
+      ./modules/audio.nix
+      ./modules/gaming.nix
+      ./modules/printing.nix
 
     ];
 
@@ -62,26 +63,6 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-  };
-
-   services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
 
   #Stadia Controller Stuff
 
@@ -94,16 +75,7 @@
     game-devices-udev-rules
     via
     ];
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -119,77 +91,15 @@
   };
 
 
-  programs.zsh.enable = true;
-    users.extraUsers.imogen = {
-    shell = pkgs.zsh;
-    };
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/nic/Projects/nixos-config";
-  };
-
-  programs.gamemode.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = false;
   #Steam Setup
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  /*
-  environment.systemPackages = with pkgs; [
-      git
-      protonplus
-      dxvk
-      wine
-      winetricks
-      vulkan-tools
-      gamescope
-      goverlay
-      mangohud
-      via
-      qmk
-      via
-      qmk
-      zsh
-      fish
-      home-manager
-      wayland-utils
-      alacritty
-      nh
-      slack
-      #xwayland-satellite-unstable
 
-
-      #XivLauncher Setup
-      (xivlauncher-rb.override {
-        useGameMode = true;
-        useSteamRun = true;
-        nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
-      })
-
-  ];
-*/
-      environment.sessionVariables = {
-        FLAKE = "/home/imogen/etc/nixos";
-      };
-
-      environment.shells = with pkgs; [
-       zsh
-      # fish
-
-      ];
 
         #Screen Sharing Stuff.
         xdg = {
@@ -223,12 +133,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
