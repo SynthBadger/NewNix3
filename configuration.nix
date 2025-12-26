@@ -166,6 +166,7 @@
       wayland-utils
       alacritty
       nh
+      slack
       #xwayland-satellite-unstable
 
 
@@ -188,6 +189,15 @@
 
       ];
 
+    xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
 
 
 
