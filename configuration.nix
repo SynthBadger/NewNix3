@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./programs.nix
 
     ];
 
@@ -146,6 +147,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  /*
   environment.systemPackages = with pkgs; [
       git
       protonplus
@@ -178,7 +180,7 @@
       })
 
   ];
-
+*/
       environment.sessionVariables = {
         FLAKE = "/home/imogen/etc/nixos";
       };
