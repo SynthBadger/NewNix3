@@ -18,7 +18,7 @@
   # -------------------------------
   home.packages = with pkgs;  [
    vim
-   openrgb
+   openrgb-with-all-plugins
    vlc
    neovim
    novelwriter
