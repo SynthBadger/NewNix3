@@ -6,7 +6,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #../../modules/programs.nix
+      ../../modules/programs.nix
       #../../modules/audio.nix
       #../../modules/gaming.nix
       #../../modules/printing.nix
