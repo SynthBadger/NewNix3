@@ -6,12 +6,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/programs.nix
-      ../../modules/audio.nix
+      #../../modules/programs.nix
+      #../../modules/audio.nix
       #../../modules/gaming.nix
-      ../../modules/printing.nix
+      #../../modules/printing.nix
       ../../modules/desktop.nix
-      ../../modules/peripherals.nix
+      #../../modules/peripherals.nix
 
     ];
 
