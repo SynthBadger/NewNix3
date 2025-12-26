@@ -21,6 +21,7 @@
       alacritty
       nh
       slack
+      tree
       #xwayland-satellite-unstable
 
 
