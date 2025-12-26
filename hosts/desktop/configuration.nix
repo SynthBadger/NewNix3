@@ -6,12 +6,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/programs.nix
-      ./modules/audio.nix
-      ./modules/gaming.nix
-      ./modules/printing.nix
-      ./modules/desktop.nix
-      ./modules/peripherals.nix
+      ../../modules/programs.nix
+      ../../modules/audio.nix
+      ../../modules/gaming.nix
+      ../../modules/printing.nix
+      ../../modules/desktop.nix
+      ../../modules/peripherals.nix
 
     ];
 
@@ -23,7 +23,7 @@
     download-buffer-size = 1000000000;
   };
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
