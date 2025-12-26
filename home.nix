@@ -85,7 +85,7 @@
       dskup = "sudo nixos-rebuild switch --flake .#desktop";
       update = "nh os switch .";
       qwe = "cd /etc/nixos";
-      garbage = "nh os clean all";
+      garbage = "nh clean all --keep 3 --dry";
       hmr = "sudo home-manager switch --flake .";
       takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
       upgrade = "sudo nixos-rebuild switch --upgrade";
