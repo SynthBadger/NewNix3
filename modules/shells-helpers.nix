@@ -19,10 +19,9 @@ programs.zsh.enable = true;
         FLAKE = "/home/imogen/etc/nixos";
       };
 
-      environment.shells = with pkgs; [
-       zsh
-      # fish
-
-      ];
+  #environment.shells = with pkgs; [
+  #     zsh
+  #     fish
+  #     ];
 
 }

@@ -23,11 +23,6 @@
     download-buffer-size = 1000000000;
   };
   networking.hostName = "nixos"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -77,18 +72,22 @@
 
 
 
-        #Screen Sharing Stuff.
-        xdg = {
-        portal = {
-          enable = true;
-          extraPortals = with pkgs; [
-            xdg-desktop-portal-wlr
-            xdg-desktop-portal-gtk
-          ];
-        };
+  #Screen Sharing Stuff.
+  xdg = {
+  portal = {
+    enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        ];
       };
+    };
 
+        environment.shells = with pkgs; [
+       zsh
+      # fish
 
+      ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
