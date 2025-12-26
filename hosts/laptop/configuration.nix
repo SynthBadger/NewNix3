@@ -8,7 +8,7 @@
       ./hardware-configuration.nix
       ../../modules/programs.nix
       ../../modules/audio.nix
-      ../../modules/gaming.nix
+      #../../modules/gaming.nix
       ../../modules/printing.nix
       ../../modules/desktop.nix
       ../../modules/peripherals.nix
