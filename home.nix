@@ -80,9 +80,9 @@
     '';
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake .";
+      update = "nh os switch .";
       qwe = "cd /etc/nixos";
-      garbage = "sudo nix-collect-garbage -d;";
+      garbage = "nh os clean all";
       hmr = "sudo home-manager switch --flake .";
       takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
       upgrade = "sudo nixos-rebuild switch --upgrade";
