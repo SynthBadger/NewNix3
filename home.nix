@@ -81,9 +81,9 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch --flake .";
-      godot = "cd ~/.dotfiles";
-      garbage = "nix-collect-garbage -d;";
-      hmr = "home-manager switch --flake .";
+      qwe = "cd /etc/nixos";
+      garbage = "sudo nix-collect-garbage -d;";
+      hmr = "sudo home-manager switch --flake .";
       takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
       upgrade = "sudo nixos-rebuild switch --upgrade";
     };
