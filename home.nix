@@ -80,6 +80,8 @@
     '';
     shellAliases = {
       ll = "ls -l";
+      lapup = "sudo nixos-rebuild switch --flake .#laptop";
+      dskup = "sudo nixos-rebuild switch --flake .#desktop";
       update = "nh os switch .";
       qwe = "cd /etc/nixos";
       garbage = "nh os clean all";
