@@ -14,12 +14,6 @@
   };
 
 
-   hardware.opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32bit = true;
-    };
-
    programs.gamemode.enable = true;
 
    programs.steam = {
