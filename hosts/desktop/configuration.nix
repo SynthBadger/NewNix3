@@ -17,6 +17,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
@@ -58,15 +59,19 @@
   hardware.graphics.enable = true;
 
   #Screen Sharing Stuff.
-  xdg = {
-  portal = {
-    enable = true;
-      extraPortals = with pkgs; [
-        #xdg-desktop-portal-kde
-        #xdg-desktop-portal-gtk
-        ];
-      };
-    };
+  xdg.portal = {
+  enable = true;
+
+  # Force KDE as the ONLY portal backend
+  config.common.default = "kde";
+
+  extraPortals = [
+    pkgs.kdePackages.xdg-desktop-portal-kde
+  ];
+};
+
+
+
 
     programs.zsh.enable = true;
     users.extraUsers.imogen = {
