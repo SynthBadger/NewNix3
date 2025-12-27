@@ -21,8 +21,7 @@
       alacritty
       nh
       slack
-      tree
-      vesktop     
+      tree     
       hwinfo
       #xwayland-satellite-unstable
 

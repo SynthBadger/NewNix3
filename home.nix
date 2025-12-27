@@ -15,7 +15,6 @@
   home.packages = with pkgs;  [
    vim
    openrgb-with-all-plugins
-   vlc
    neovim
    novelwriter
    hunspell
@@ -25,6 +24,7 @@
    putty
    joplin
    vlc
+   discord
 
 
 
