@@ -63,15 +63,11 @@
 
   #Screen Sharing Stuff.
   xdg.portal = {
-  enable = true;
+    enable = true;
+    config.common.default = "kde";  # Force KDE portal only
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
+  };
 
-  # Force KDE as the ONLY portal backend
-  config.common.default = "kde";
-
-  extraPortals = [
-    pkgs.kdePackages.xdg-desktop-portal-kde
-  ];
-};
 
 
 
