@@ -23,6 +23,7 @@
       slack
       tree
       vesktop     
+      hwinfo
       #xwayland-satellite-unstable
 
 
