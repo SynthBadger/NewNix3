@@ -6,7 +6,6 @@
     [
       ./hardware-configuration.nix
       ../../modules/programs.nix
-      ../../modules/audio.nix
       ../../modules/gaming.nix
       ../../modules/printing.nix
       ../../modules/desktop.nix
@@ -57,18 +56,7 @@
 
   hardware.graphics.enable = true;
 
-  #Screen Sharing Stuff.
-  xdg.portal = {
-    enable = true;
-    config.common.default = "kde";  # Force KDE portal only
-    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
-  };
-
-
-
-
-
-    programs.zsh.enable = true;
+  programs.zsh.enable = true;
     users.extraUsers.imogen = {
     shell = pkgs.zsh;
     };
