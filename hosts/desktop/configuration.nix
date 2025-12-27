@@ -17,7 +17,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.modeset.force-atomic=1"
+    ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
