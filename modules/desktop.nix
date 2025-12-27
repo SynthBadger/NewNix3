@@ -4,21 +4,8 @@
 
 xdg.portal = {
   enable = true;
-  
- config = {
-        common = {
-          default = "wlr";
-        };
-      };
-      wlr.enable = true;
-      wlr.settings.screencast = {
-        output_name = "<DP-2>";
-        chooser_type = "simple";
-        chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-      }; 
-
- # config.common.default = "kde";  # only KDE portal
- # extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ];
+  config.common.default = "kde";  # only KDE portal
+  extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ]; 
 };
 
 
