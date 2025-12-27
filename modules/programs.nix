@@ -22,6 +22,7 @@
       nh
       slack
       tree
+      vesktop     
       #xwayland-satellite-unstable
 
 
