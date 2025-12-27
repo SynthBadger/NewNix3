@@ -70,7 +70,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
+  hardware.opengl = {
+      enable = true;
+    };
 
   #Screen Sharing Stuff.
   xdg = {
