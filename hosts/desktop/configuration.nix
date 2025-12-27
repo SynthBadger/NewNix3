@@ -17,10 +17,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [
-    "nvidia-drm.modeset=1"
-    "nvidia-drm.modeset.force-atomic=1"
-    ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
@@ -46,7 +42,7 @@
   users.users.imogen = {
     isNormalUser = true;
     description = "imogen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp"];
     packages = with pkgs; [
       kdePackages.kate
       thunderbird
@@ -86,7 +82,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+    services.flatpak.enable = true;
     services.openssh.enable = true;
     system.stateVersion = "25.05"; # Did you read the comment?
 
