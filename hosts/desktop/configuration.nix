@@ -13,8 +13,8 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
-  boot.loader.systemd-boot.graceful = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.graceful = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
