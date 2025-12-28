@@ -24,7 +24,7 @@
    putty
    joplin
    vlc
-   discord
+   vesktop
 
 
 

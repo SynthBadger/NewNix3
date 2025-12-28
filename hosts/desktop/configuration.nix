@@ -47,7 +47,7 @@
     ];
   };
 
-
+  programs.vesktop.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = false;
 
@@ -69,6 +69,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+    
     services.flatpak.enable = true;
     services.openssh.enable = true;
     system.stateVersion = "25.05"; # Did you read the comment?
