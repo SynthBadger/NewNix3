@@ -19,6 +19,10 @@
   let
     system = "x86_64-linux";
 
+    #testing this
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+
     mkHost = hostPath: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; };
@@ -42,8 +46,8 @@
       laptop  = mkHost ./hosts/laptop/configuration.nix;
     };
 
-    packages.x86_64-linux = {
-      niri = nixpkgs.lib.callPackage ./niri/default.nix { };
-    };
+   # packages.x86_64-linux = {
+   #  niri = nixpkgs.lib.callPackage ./niri/default.nix { };
+   #};
   };
 }
