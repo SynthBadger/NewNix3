@@ -64,11 +64,6 @@
      # fish
        ];
 
-  xdg.portal = {
-  enable = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  config.common.default = "kde"; # Replace with "kde" or "gnome" if using those
-};
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
