@@ -62,7 +62,13 @@
   # -------------------------------
   #programs.home-manager.enable = true;
 
-
+  programs.vesktop = {
+  enable = true;
+  vencord.settings = {
+    useQuickCss = true;
+    plugins.Settings.enabled = true; # Ensures the settings menu itself is enabled
+  };
+};
 
   # -------------------------------
   # Zsh configuration
