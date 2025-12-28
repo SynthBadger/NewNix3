@@ -12,8 +12,6 @@
       mangohud
       via
       qmk
-      via
-      qmk
       zsh
       fish
       home-manager

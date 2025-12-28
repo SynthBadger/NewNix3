@@ -47,6 +47,7 @@
     ];
   };
 
+  # programs.vesktop.enable = true;
   programs.firefox.enable = true;
   programs.niri.enable = false;
 
@@ -62,6 +63,7 @@
        zsh
      # fish
        ];
+
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {

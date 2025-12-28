@@ -2,11 +2,12 @@
 
 {
 
-xdg.portal = {
-  enable = true;
-  config.common.default = "kde";  # only KDE portal
-  extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde ]; 
-};
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
+    config.common.default = "kde";
+  };
+
 
 
   services.xserver.enable = false;
