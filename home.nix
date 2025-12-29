@@ -27,6 +27,15 @@
    kdePackages.kate
    xwayland
    vesktop
+
+    (writeShellScriptBin "gacp" ''
+    echo -n "Enter commit message: "
+    read msg
+    git add .
+    git commit -m "$msg"
+    git push
+  '')
+
   ];
 
   # -------------------------------
@@ -53,19 +62,8 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
-    # Using initExtra instead of initContent for better compatibility
     initContent = ''
       PROMPT='%/ %#'
-
-      # Standard Zsh function definition
-      gacp() {
-        # Note: Zsh uses "read 'VAR?Prompt: '" syntax
-        read "MSG?Enter commit message: "
-        git add .
-        git commit -m "$MSG"
-        git push
-      }
     '';
 
     shellAliases = {
