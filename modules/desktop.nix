@@ -15,15 +15,15 @@
     variant = "";
   };
 
-  # 2. XDG Portals (Critical for Screen Sharing)
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.kdePackages.xdg-desktop-portal-kde # Correct attribute for Plasma 6
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config.common.default = "kde";
-  };
+  ## 2. XDG Portals (Critical for Screen Sharing)
+  #xdg.portal = {
+  #  enable = true;
+  #  extraPortals = [
+  #    pkgs.kdePackages.xdg-desktop-portal-kde # Correct attribute for Plasma 6
+  # #   pkgs.xdg-desktop-portal-gtk
+  #  ];
+  #  config.common.default = "kde";
+  #};
 
 
   # 3. Audio & PipeWire (Best Practice 2025)

@@ -22,7 +22,7 @@
   nix.settings ={
     download-buffer-size = 1000000000;
   };
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

@@ -14,11 +14,13 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.systemd-boot.graceful = true;
+  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
   };
+
   networking.hostName = "desktop"; # Define your hostname.
   networking.networkmanager.enable = true;
 
@@ -74,6 +76,8 @@
     services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
     services.flatpak.enable = true;
     services.openssh.enable = true;
+
+
     system.stateVersion = "25.05"; # Did you read the comment?
 
 }
