@@ -19,7 +19,7 @@
   nix.settings ={
     download-buffer-size = 1000000000;
   };
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
@@ -37,10 +37,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+
   users.users.imogen = {
     isNormalUser = true;
     description = "imogen";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp" "i2c" ]; # added i2c for OpenRGB
+    shell = pkgs.zsh;
+    # Recommended: move these to home.nix
     packages = with pkgs; [
       kdePackages.kate
       thunderbird
@@ -56,10 +59,8 @@
   hardware.graphics.enable = true;
 
   programs.zsh.enable = true;
-    users.extraUsers.imogen = {
-    shell = pkgs.zsh;
-    };
-    environment.shells = with pkgs; [
+
+  environment.shells = with pkgs; [
        zsh
      # fish
        ];
