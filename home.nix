@@ -65,8 +65,8 @@
     shellAliases = {
       ll = "ls -l";
       bigp = "git pull origin master --force";
-      lapup = "sudo nixos-rebuild switch --flake .#laptop";
-      dskup = "sudo nixos-rebuild switch --flake .#desktop";
+      lapup = "nh os switch --update . -H laptop";
+      dskup = "nh os switch --update . -H desktop";
       qwe = "cd /etc/nixos";
       garbage = "nh clean all --keep 2";
       dskrb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#desktop";
