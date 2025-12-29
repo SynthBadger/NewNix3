@@ -56,8 +56,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  hardware.graphics.enable = true;
-
   programs.zsh.enable = true;
 
   environment.shells = with pkgs; [
