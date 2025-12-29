@@ -2,9 +2,13 @@
 
 {
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+      enable = true;
+      extraPackages = [pkgs.nvidia-vaapi-driver];
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
-  #hardware.graphics.extraPackages = [ pkgs.nvidia-vaapi-driver ];
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
