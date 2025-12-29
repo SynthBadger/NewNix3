@@ -1,4 +1,5 @@
 { config, pkgs, ...}:
+
  {
   environment.systemPackages = with pkgs; [
       git
@@ -27,16 +28,14 @@
         useGameMode = true;
         useSteamRun = true;
         nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
-      })
+        })
+      ];
 
+  programs.firefox.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  programs.zsh.enable = true;
+  environment.shells = with pkgs; [
+    zsh
+  # fish
   ];
-        programs.firefox.enable = true;
-        nixpkgs.config.allowUnfree = true;
-        programs.zsh.enable = true;
-        environment.shells = with pkgs; [
-          zsh
-        # fish
-          ];
-
-
 }
