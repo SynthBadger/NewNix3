@@ -39,8 +39,6 @@
     wireplumber.enable = true;
   };
 
-  # 4. Miscellaneous Services
-  services.flatpak.enable = true;
 
 
   # 5. you need this for vesktop to work
