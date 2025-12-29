@@ -3,12 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixos-xivlauncher-rb = {
       url = "github:drakon64/nixos-xivlauncher-rb";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,38 +14,29 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-xivlauncher-rb, ... }@inputs:
-  let
-    system = "x86_64-linux";
-
-    #testing this
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
-
-    mkHost = hostPath: nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
-      modules = [
-        hostPath
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.imogen = import ./home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
-
-        nixos-xivlauncher-rb.nixosModules.default
-      ];
+    let
+      system = "x86_64-linux";
+      mkHost = hostPath: nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          hostPath
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.imogen = import ./home.nix;
+              extraSpecialArgs = { inherit inputs; };
+            };
+          }
+          nixos-xivlauncher-rb.nixosModules.default
+        ];
+      };
+    in {
+      nixosConfigurations = {
+        desktop = mkHost ./hosts/desktop/configuration.nix;
+        laptop = mkHost ./hosts/laptop/configuration.nix;
+      };
     };
-  in {
-    nixosConfigurations = {
-      desktop = mkHost ./hosts/desktop/configuration.nix;
-      laptop  = mkHost ./hosts/laptop/configuration.nix;
-    };
-
-   # packages.x86_64-linux = {
-   #  niri = nixpkgs.lib.callPackage ./niri/default.nix { };
-   #};
-  };
 }

@@ -21,7 +21,7 @@
       slack
       tree     
       hwinfo
-      home-manager
+      vesktop
       #xwayland-satellite-unstable
 
 
