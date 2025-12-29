@@ -68,8 +68,9 @@
       lapup = "sudo nixos-rebuild switch --flake .#laptop";
       dskup = "sudo nixos-rebuild switch --flake .#desktop";
       qwe = "cd /etc/nixos";
-      garbage = "nh clean all --keep 2 --dry";
-      hmr = "sudo home-manager switch --flake .";
+      garbage = "nh clean all --keep 2";
+      dskrb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#desktop";
+      laprb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#laptop";
       # takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
     };
     history.size = 10000;

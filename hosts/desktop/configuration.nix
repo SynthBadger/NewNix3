@@ -73,7 +73,7 @@
   #   enableSSHSupport = true;
   # };
     services.hardware.openrgb.enable = true;
-     services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
+    services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
     services.flatpak.enable = true;
     services.openssh.enable = true;
     system.stateVersion = "25.05"; # Did you read the comment?

@@ -18,10 +18,13 @@
   # 2. XDG Portals (Critical for Screen Sharing)
   xdg.portal = {
     enable = true;
-    # Add GTK portal as a fallback for Electron apps like Vesktop
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [
+      pkgs.kdePackages.xdg-desktop-portal-kde # Correct attribute for Plasma 6
+      pkgs.xdg-desktop-portal-gtk
+    ];
     config.common.default = "kde";
   };
+
 
   # 3. Audio & PipeWire (Best Practice 2025)
   services.pulseaudio.enable = false;
@@ -38,6 +41,11 @@
 
   # 4. Miscellaneous Services
   services.flatpak.enable = true;
-  services.hardware.openrgb.enable = true;
+
+
+  # 5. you need this for vesktop to work
+  environment.sessionVariables = {
+  NIXOS_OZONE_WL = "1";
+  };
 }
 
