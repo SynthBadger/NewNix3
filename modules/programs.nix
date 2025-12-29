@@ -21,11 +21,8 @@
       slack
       tree     
       hwinfo
-      vesktop
-      #xwayland-satellite-unstable
 
 
-      #XivLauncher Setup
       (xivlauncher-rb.override {
         useGameMode = true;
         useSteamRun = true;
@@ -33,5 +30,13 @@
       })
 
   ];
+        programs.firefox.enable = true;
+        nixpkgs.config.allowUnfree = true;
+        programs.zsh.enable = true;
+        environment.shells = with pkgs; [
+          zsh
+        # fish
+          ];
+
 
 }

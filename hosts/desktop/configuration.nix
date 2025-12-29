@@ -14,7 +14,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+  boot.kernelParams = [ "mem_sleep_default=s2idle" "nvidia-drm.fbdev=1"];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
@@ -45,25 +45,8 @@
     description = "imogen";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp" "i2c" ]; # added i2c for OpenRGB
     shell = pkgs.zsh;
-    # Recommended: move these to home.nix
-    packages = with pkgs; [
-      kdePackages.kate
-      thunderbird
-    ];
   };
 
-  # programs.vesktop.enable = true;
-  programs.firefox.enable = true;
-  programs.niri.enable = false;
-
-  nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
-
-  environment.shells = with pkgs; [
-       zsh
-     # fish
-       ];
 
 
 
@@ -72,9 +55,9 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
     services.hardware.openrgb.enable = true;
     services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
-    services.flatpak.enable = true;
     services.openssh.enable = true;
 
 

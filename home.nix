@@ -24,7 +24,8 @@
    putty
    joplin
    vlc
-
+   kdePackages.kate
+   xwayland
   ];
 
   # -------------------------------
