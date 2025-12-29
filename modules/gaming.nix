@@ -4,7 +4,7 @@
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-
+  #hardware.graphics.extraPackages = [ pkgs.nvidia-vaapi-driver ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
