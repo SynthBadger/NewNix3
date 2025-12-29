@@ -28,7 +28,7 @@
    xwayland
    vesktop
 
-    (writeShellScriptBin "gacp" ''
+    (writeShellScriptBin "acp" ''
     echo -n "Enter commit message: "
     read msg
     git add .
@@ -75,6 +75,7 @@
       garbage = "nh clean all --keep 2";
       dskrb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#desktop";
       laprb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#laptop";
+
 
       # takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
     };
