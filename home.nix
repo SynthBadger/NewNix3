@@ -53,9 +53,21 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    # Using initExtra instead of initContent for better compatibility
     initContent = ''
       PROMPT='%/ %#'
+
+      # Standard Zsh function definition
+      gacp() {
+        # Note: Zsh uses "read 'VAR?Prompt: '" syntax
+        read "MSG?Enter commit message: "
+        git add .
+        git commit -m "$MSG"
+        git push
+      }
     '';
+
     shellAliases = {
       ll = "ls -l";
       bigp = "git pull origin master --force";
@@ -65,6 +77,7 @@
       garbage = "nh clean all --keep 2";
       dskrb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#desktop";
       laprb = "sudo nixos-rebuild switch --recreate-lock-file --flake .#laptop";
+
       # takeoutdatrash = "sudo nix-channel --update; nix-env -u always; sudo nix-collect-garbage -d; rm -r /nix/var/nix/gcroots/auto*;";
     };
     history.size = 10000;
