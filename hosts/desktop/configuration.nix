@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, libs,  ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/programs.nix
       ../../modules/gaming.nix
       ../../modules/printing.nix
       ../../modules/desktop.nix
@@ -16,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "mem_sleep_default=s2idle" "nvidia-drm.fbdev=1"];
-
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings ={
     download-buffer-size = 1000000000;
@@ -45,17 +44,25 @@
     isNormalUser = true;
     description = "imogen";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp" "i2c" ]; # added i2c for OpenRGB
-    shell = pkgs.zsh;
   };
 
 
 
+  environment.systemPackages = with pkgs; [
+
+
+
+
+
+  ];
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+
 
     services.hardware.openrgb.enable = true;
     services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;

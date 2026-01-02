@@ -13,20 +13,44 @@
   # Packages
   # -------------------------------
   home.packages = with pkgs;  [
-   vim
-   openrgb
-   neovim
-   novelwriter
-   hunspell
-   hunspellDicts.en_US
-   telegram-desktop
-   fastfetch
-   putty
-   joplin
-   vlc
-   kdePackages.kate
-   xwayland
-   vesktop
+      vim
+      openrgb
+      neovim
+      novelwriter
+      hunspell
+      hunspellDicts.en_US
+      telegram-desktop
+      fastfetch
+      putty
+      joplin
+      vlc
+      kdePackages.kate
+      xwayland
+      vesktop
+      git
+      protonplus
+      dxvk
+      wine
+      winetricks
+      vulkan-tools
+      gamescope
+      goverlay
+      mangohud
+      via
+      qmk
+      zsh
+      fish
+      home-manager
+      wayland-utils
+      alacritty
+      nh
+      slack
+      tree
+      hwinfo
+      firefox
+      zsh
+
+
 
     (writeShellScriptBin "acp" ''
     echo -n "Enter commit message: "

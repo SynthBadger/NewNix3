@@ -2,10 +2,6 @@
 
 {
 
-programs.zsh.enable = true;
-    users.extraUsers.imogen = {
-    shell = pkgs.zsh;
-    };
 
   programs.nh = {
     enable = true;
@@ -19,9 +15,6 @@ programs.zsh.enable = true;
         FLAKE = "/home/imogen/etc/nixos";
       };
 
-  #environment.shells = with pkgs; [
-  #     zsh
-  #     fish
-  #     ];
+
 
 }
