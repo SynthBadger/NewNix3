@@ -1,26 +1,5 @@
 { config, pkgs, lib, ... }:
 
-  let
-  # This is the wrapper for the non-RB XIVLauncher
-  xivlauncherWrapped = pkgs.writeShellScriptBin "xivlauncher" ''
-    # Use Proton GE
-    export WINE=${pkgs.steamProtonGE}/bin/wine64
-    export WINEPREFIX=$HOME/.local/share/xivlauncher/wineprefix
-
-    # DXVK + DLSS
-    export DXVK_ENABLE_NVAPI=1       # required for DLSS
-    export DXVK_PATH=${pkgs.dxvk}/lib/dxvk
-    export VK_ICD_FILENAMES=${pkgs.vulkan-loader}/share/vulkan/icd.d/nvidia_icd.json
-    export VK_LAYER_PATH=${pkgs.vulkan-loader}/share/vulkan/explicit_layer.d
-
-    # Optional DLSS flags
-    export DXVK_NVAPI_ENABLE=1
-    export DXVK_USE_DLSS=1
-
-    # Run the original launcher
-    exec ${pkgs.xivlauncher}/bin/xivlauncher "$@"
-  '';
-in
 {
 
   # -------------------------------

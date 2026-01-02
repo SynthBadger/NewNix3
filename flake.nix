@@ -11,7 +11,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, /*nixos-xivlauncher-rb*/... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       mkHost = hostPath: nixpkgs.lib.nixosSystem {

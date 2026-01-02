@@ -62,11 +62,11 @@
 
   hardware.graphics = {
       enable = true;
-      extraPackages = [pkgs.nvidia-vaapi-driver];
+      #extraPackages = [pkgs.nvidia-vaapi-driver];
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-
+  programs.gamemode.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -76,7 +76,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-   programs.gamemode.enable = true;
+
 
    programs.steam = {
     enable = true;
