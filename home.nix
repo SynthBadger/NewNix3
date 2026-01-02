@@ -14,7 +14,6 @@
   # -------------------------------
   home.packages = with pkgs;  [
 
-
       alacritty
       fastfetch
       firefox
@@ -38,12 +37,9 @@
       via
       vim
       vlc
+      xivlauncher-rb
 
-
-
-
-
-    (writeShellScriptBin "acp" ''
+   (writeShellScriptBin "acp" ''
     echo -n "Enter commit message: "
     read msg
     git add .
