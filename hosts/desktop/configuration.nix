@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ../../modules/printing.nix
       ../../modules/desktop.nix
-      ../../modules/peripherals.nix
 
     ];
 
@@ -38,6 +37,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  hardware.uinput.enable = true;
+
+  # Keybord settings
+
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = with pkgs; [
+    game-devices-udev-rules
+    via
+    ];
 
   users.users.imogen = {
     isNormalUser = true;
