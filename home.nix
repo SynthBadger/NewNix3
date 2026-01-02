@@ -13,43 +13,33 @@
   # Packages
   # -------------------------------
   home.packages = with pkgs;  [
-      vim
-      openrgb
-      neovim
-      novelwriter
+
+
+      alacritty
+      fastfetch
+      firefox
+      fish
+      git
+      goverlay
       hunspell
       hunspellDicts.en_US
-      telegram-desktop
-      fastfetch
-      putty
-      joplin
-      vlc
-      kdePackages.kate
-      xwayland
-      vesktop
-      git
-      protonplus
-      dxvk
-      wine
-      winetricks
-      vulkan-tools
-      gamescope
-      goverlay
-      mangohud
-      via
-      qmk
-      zsh
-      fish
-      home-manager
-      wayland-utils
-      alacritty
-      nh
-      slack
-      tree
       hwinfo
-      firefox
-      zsh
+      joplin
+      kdePackages.kate
+      neovim
+      nh
+      novelwriter
+      putty
+      qmk
+      slack
+      telegram-desktop
+      tree
+      vesktop
+      via
+      vim
+      vlc
       xivlauncher
+
 
 
 

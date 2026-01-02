@@ -8,13 +8,13 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-xivlauncher-rb = {
-      url = "github:drakon64/nixos-xivlauncher-rb";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixos-xivlauncher-rb = {
+    #   url = "github:drakon64/nixos-xivlauncher-rb";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-xivlauncher-rb, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, /*nixos-xivlauncher-rb*/... }@inputs:
     let
       system = "x86_64-linux";
       mkHost = hostPath: nixpkgs.lib.nixosSystem {
@@ -31,7 +31,7 @@
               extraSpecialArgs = { inherit inputs; };
             };
           }
-          nixos-xivlauncher-rb.nixosModules.default
+          #nixos-xivlauncher-rb.nixosModules.default
         ];
       };
     in {

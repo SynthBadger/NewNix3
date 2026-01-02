@@ -55,10 +55,19 @@
 
   environment.systemPackages = with pkgs; [
 
-
-
-
-  ];
+      winetricks
+      wine
+      vulkan-tools
+      protonplus
+      protonup-qt
+      gamescope
+      dxvk
+      home-manager
+      mangohud
+      wayland-utils
+      xivlauncher
+      zsh
+      ];
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -70,7 +79,7 @@
 
     services.hardware.openrgb.enable = true;
     services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
-    services.openssh.enable = true;
+
 
 
     system.stateVersion = "25.05"; # Did you read the comment?
