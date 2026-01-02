@@ -51,15 +51,15 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/nic/Projects/nixos-config";
-
+  };
 
   environment.systemPackages = with pkgs; [
 
-      #(xivlauncher-rb.override {
-       # useGameMode = true;
-       # useSteamRun = true;
-       # nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
-       # })
+      (xivlauncher-rb.override {
+        useGameMode = true;
+        useSteamRun = true;
+        nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
+        })
 
 
 
