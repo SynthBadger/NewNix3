@@ -46,6 +46,11 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "lp" "i2c" ]; # added i2c for OpenRGB
   };
 
+    programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/nic/Projects/nixos-config";
 
 
   environment.systemPackages = with pkgs; [

@@ -49,6 +49,7 @@
       hwinfo
       firefox
       zsh
+      xivlauncher
 
 
 
