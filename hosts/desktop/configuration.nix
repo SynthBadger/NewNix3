@@ -101,6 +101,13 @@
       xivlauncher
       zsh
       gamemode
+
+          (pkgs.xivlauncher-rb.override {
+      useGameMode = true;
+      useSteamRun = true;
+      nvngxPath = "${config.hardware.nvidia.package}/lib/nvidia/wine";
+    })
+
       ];
 
   # programs.mtr.enable = true;

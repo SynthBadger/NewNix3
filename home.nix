@@ -37,7 +37,7 @@
       via
       vim
       vlc
-      xivlauncher-rb
+
 
    (writeShellScriptBin "acp" ''
     echo -n "Enter commit message: "
