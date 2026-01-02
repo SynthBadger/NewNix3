@@ -100,6 +100,7 @@
       wayland-utils
       xivlauncher
       zsh
+      gamemode
       ];
 
   # programs.mtr.enable = true;
